@@ -1,4 +1,4 @@
-const fullname = document.getElementById('fullname');
+const fullname = document.getElementById('fullname')
 const email = document.getElementById('email')
 const phone = document.getElementById("phone")
 const company = document.getElementById("company")
@@ -6,3 +6,4 @@ const jobTittle = document.getElementById("job-title")
 const message = document.getElementById("message")
 const interest = document.getElementById("interest")
 const consent = document.getElementById("consent")
+const checkbox = document.getElementById("consent")
