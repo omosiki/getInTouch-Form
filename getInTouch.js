@@ -1,9 +1,15 @@
-const fullname = document.getElementById('fullname')
-const email = document.getElementById('email')
-const phone = document.getElementById("phone")
-const company = document.getElementById("company")
-const jobTittle = document.getElementById("job-title")
-const message = document.getElementById("message")
-const interest = document.getElementById("interest")
+
+
 const consent = document.getElementById("consent")
-const checkbox = document.getElementById("consent")
+const btn = document.getElementById("submit-btn")
+btn.addEventListener("submit", function(e){
+    e.preventDefault()
+    const fullname = document.getElementById('fullname').value;
+const email = document.getElementById('email').value;
+const phone = document.getElementById("phone").value;
+const company = document.getElementById("company").value;
+const jobTittle = document.getElementById("job-title").value;
+const message = document.getElementById("message").value;
+const interest = document.getElementById("interest").value;
+console.log(fullname, email, phone, company, jobTittle, message, interest)
+})
