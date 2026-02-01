@@ -17,23 +17,24 @@ document.addEventListener("DOMContentLoaded", ()=>{
             const jobTittle = document.getElementById("job-title").value;
             const message = document.getElementById("message").value;
             const interest = document.getElementById("interest").value;
-            console.log(fullname,
-                email,
-                phone,
-                company,
-                jobTittle, 
-                message,
-                interest)
+
+            // create a data object
+               const formData = {
+            fullname: fullname,
+            email: email,
+            phone: phone,
+            company: company,
+            jobTitle: jobTittle, // Corrected key name
+            message: message,
+            interest: interest
+        };
+            console.log("Data to be saved", formData)
+               
     })
 
-    Swal.fire({
-  title: 'Error!',
-  text: 'Do you want to continue',
-  icon: 'error',
-  confirmButtonText: 'Cool'
+    
 })
-})
-
+localStorage.setItem("")
 
 
 // const consent = document.getElementById("consent")
