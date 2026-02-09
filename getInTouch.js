@@ -1,11 +1,6 @@
 
  const formY = document.querySelector("#myform")
-    
-document.addEventListener("DOMContentLoaded", ()=>{
-      if(!formY){
-        console.log("Form with id myform not Found")
-        return;
-      }
+ 
     formY.addEventListener("submit", (event) =>{
         event.preventDefault()
      
@@ -29,12 +24,39 @@ document.addEventListener("DOMContentLoaded", ()=>{
             interest: interest
         };
             console.log("Data to be saved", formData)
-               
-    })
-
+            // savetoLocalStorage()
+                   // Save to loacal storage
+    localStorage.setItem("Data", JSON.stringify(formData))
+    console.log("Save local storage")
     
-})
-localStorage.setItem("")
+    
+    })
+    // function display on a table
+    function displayData(){
+        const tableData = document.querySelector("#dataTable tbody")
+            // Get data from local storage
+        const saveData = localStorage.getItem("Data")
+        if(!saveData){
+            console.log("No data found in local storge")
+            return;
+        }
+        const data = JSON.parse(saveData);
+        // create Table row
+        const row = document.createElement("tr")
+        row.innerHTML = `
+        <td>${data.fullname}</td>
+        <td>${data.email}</td>
+        <td>${data.phone}</td>
+        <td>${data.company}</td>
+        <td>${data.jobTIttle}</td>
+        <td>${data.interest}</td>
+        `
+        tableData.appendChild(row)
+    }
+    displayData()
+    
+
+
 
 
 // const consent = document.getElementById("consent")
